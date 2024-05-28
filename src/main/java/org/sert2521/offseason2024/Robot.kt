@@ -3,10 +3,10 @@ package org.sert2521.offseason2024
 import edu.wpi.first.hal.FRCNetComm.tInstances
 import edu.wpi.first.hal.FRCNetComm.tResourceType
 import edu.wpi.first.hal.HAL
-import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.CommandScheduler
+import org.littletonrobotics.junction.LoggedRobot
 import org.sert2521.offseason2024.commands.Autos
 
 /**
@@ -19,7 +19,7 @@ import org.sert2521.offseason2024.commands.Autos
  * the `Main.kt` file in the project. (If you use the IDE's Rename or Move refactorings when renaming the
  * object or package, it will get changed everywhere.)
  */
-object Robot : TimedRobot()
+object Robot : LoggedRobot()
 {
     /**
      * The autonomous command to run. While a default value is set here,
