@@ -3,7 +3,6 @@ package org.sert2521.offseason2024
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController
 import edu.wpi.first.wpilibj2.command.button.Trigger
 import org.sert2521.offseason2024.Constants.OperatorConstants
-import org.sert2521.offseason2024.commands.Autos
 import org.sert2521.offseason2024.commands.ExampleCommand
 import org.sert2521.offseason2024.subsystems.ExampleSubsystem
 

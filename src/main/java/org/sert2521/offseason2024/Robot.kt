@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import org.littletonrobotics.junction.LoggedRobot
-import org.sert2521.offseason2024.commands.Autos
 
 /**
  * The VM is configured to automatically run this object (which basically functions as a singleton class),
@@ -26,7 +25,7 @@ object Robot : LoggedRobot()
      * the [autonomousInit] method will set it to the value selected in
      *the  AutoChooser on the dashboard.
      */
-    private var autonomousCommand: Command = Autos.defaultAutonomousCommand
+
 
 
     /**
@@ -74,8 +73,7 @@ object Robot : LoggedRobot()
     {
         // We store the command as a Robot property in the rare event that the selector on the dashboard
         // is modified while the command is running since we need to access it again in teleopInit()
-        autonomousCommand = Autos.selectedAutonomousCommand
-        autonomousCommand.schedule()
+
     }
 
     /** This method is called periodically during autonomous.  */
@@ -87,7 +85,6 @@ object Robot : LoggedRobot()
     {
         // This makes sure that the autonomous stops running when teleop starts running. If you want the
         // autonomous to continue until interrupted by another command, remove this line or comment it out.
-        autonomousCommand.cancel()
     }
 
     /** This method is called periodically during operator control.  */
