@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger
 import org.sert2521.offseason2024.Constants.OperatorConstants
 import org.sert2521.offseason2024.commands.ExampleCommand
 import org.sert2521.offseason2024.subsystems.ExampleSubsystem
+import org.sert2521.offseason2024.commands.Autos
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
