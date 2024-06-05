@@ -1,12 +1,5 @@
 package org.sert2521.offseason2024.subsystems.intake
 
-import edu.wpi.first.math.geometry.Pose2d
-import edu.wpi.first.math.kinematics.SwerveDriveKinematics
-import org.littletonrobotics.junction.AutoLog
-import org.littletonrobotics.junction.inputs.LoggableInputs
-import org.sert2521.offseason2024.utils.AutoLoggableInput
-import org.sert2521.offseason2024.utils.AutoLoggableInputs
-
 
 interface IntakeIO {
 
@@ -18,8 +11,13 @@ interface IntakeIO {
         var supplyCurrentAmps = 0.0
         var tempCelsius = 0.0
 
-        var inputs = AutoLoggableInputs(::positionRadians, ::velocityRadPerSec, ::appliedVoltage, ::supplyCurrentAmps, ::tempCelsius)
+        //var a = AutoLoggableInputs(::positionRadians)
+        init{
+            this.javaClass.declaredFields
+        }
     }
+
+
 
     fun updateInputs(inputs:IntakeIOInputs) {}
 
