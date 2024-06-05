@@ -2,9 +2,11 @@ package org.sert2521.offseason2024.subsystems.intake
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 import org.littletonrobotics.junction.Logger
+import org.littletonrobotics.junction.inputs.LoggableInputs
 import org.sert2521.offseason2024.ConfigConsts
 import org.sert2521.offseason2024.ElecIDs
 import org.sert2521.offseason2024.PhysicalConsts
+import swervelib.parser.SwerveParser
 
 
 object Intake:SubsystemBase(){
@@ -17,7 +19,11 @@ object Intake:SubsystemBase(){
 
     override fun periodic() {
         //io.updateInputs(inputs)
-        //Logger.processInputs(name, inputs)
+        //Logger.processInputs
+    }
+
+    init {
+
     }
 
 }
