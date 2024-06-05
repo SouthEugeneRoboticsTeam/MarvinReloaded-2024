@@ -1,11 +1,12 @@
 package org.sert2521.offseason2024.subsystems.intake
 
 import org.littletonrobotics.junction.AutoLog
+import org.littletonrobotics.junction.inputs.LoggableInputs
 
 interface IntakeIO {
 
-    @AutoLog
-    abstract class IntakeIOInputs{
+
+    class IntakeIOInputs {
         var positionRadians = 0.0
         var velocityRadPerSec = 0.0
         var appliedVoltage = 0.0
