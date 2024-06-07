@@ -24,6 +24,8 @@ class IntakeIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean,
         motor.inverted = inverted
     }
 
+
+    /** This sets the logged variables to the correct values */
     override fun updateInputs(inputs: IntakeIO.IntakeIOInputs) {
         inputs.appliedVoltage = motor.appliedOutput * motor.busVoltage
         inputs.positionRadians = Units.rotationsToRadians(encoder.position) / gearReduction

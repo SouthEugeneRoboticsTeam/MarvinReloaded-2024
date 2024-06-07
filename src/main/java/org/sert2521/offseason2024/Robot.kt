@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.Command
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import org.littletonrobotics.junction.LoggedRobot
+import org.sert2521.offseason2024.subsystems.intake.Intake
 
 /**
  * The VM is configured to automatically run this object (which basically functions as a singleton class),
@@ -55,6 +56,7 @@ object Robot : LoggedRobot()
         // and running subsystem periodic() methods.  This must be called from the robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run()
+        Intake
     }
 
     /** This method is called once each time the robot enters Disabled mode.  */
