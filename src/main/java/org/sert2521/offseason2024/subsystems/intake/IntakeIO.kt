@@ -13,6 +13,7 @@ interface IntakeIO {
         var appliedVoltage = 0.0
         var supplyCurrentAmps = 0.0
         var tempCelsius = 0.0
+        var beambreakValue = false
 
         override fun toLog(table: LogTable) {
             table.put("positionRadians", positionRadians)
@@ -35,6 +36,10 @@ interface IntakeIO {
 
     fun updateInputs(inputs:IntakeIOInputs) {}
 
-    fun setVoltage(volts:Double) {}
+    fun setPullerVoltage(volts:Double) {}
+    fun setPullerSpeed(speed:Double) {}
+    fun setAlignVoltage(volts:Double) {}
+    fun setAlignSpeed(speed:Double) {}
     fun stop() {}
+    fun getBeambreak():Boolean {}
 }

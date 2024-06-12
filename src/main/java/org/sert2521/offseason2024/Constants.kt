@@ -35,6 +35,7 @@ object PhysicalConsts {
  */
 object ElecIDs {
     const val INTAKE_ID = 1
+    const val BEAMBREAK_ID = -1
 }
 
 /**
@@ -55,6 +56,8 @@ object ConfigConsts {
  * and use (motor)_VOLTAGE and use a scale of voltage when using motor.setVoltage().
  */
 object MotorSpeeds {
+    const val INTAKE_PULLER_SPEED = 0.0
+    const val INTAKE_ANIGN_SPEED = 0.0
 }
 
 
