@@ -41,5 +41,5 @@ interface IntakeIO {
     fun setAlignVoltage(volts:Double) {}
     fun setAlignSpeed(speed:Double) {}
     fun stop() {}
-    fun getBeambreak():Boolean {}
+    //fun getBeambreak():Boolean {}
 }
