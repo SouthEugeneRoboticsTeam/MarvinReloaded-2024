@@ -1,7 +1,6 @@
 package org.sert2521.offseason2024
 
 import com.revrobotics.CANSparkBase
-import edu.wpi.first.math.trajectory.TrapezoidProfile
 
 /*
  * The Constants file provides a convenient place for teams to hold robot-wide
@@ -30,12 +29,6 @@ import edu.wpi.first.math.trajectory.TrapezoidProfile
 object PhysicalConsts {
     const val INTAKE_GEAR_REDUCTION = 1.0
     const val ARM_GEAR_REDUCTION = 1.0
-
-    //Arm setpoints (Change them)
-    const val ARM_STOW = 0.0
-    const val ARM_AMP = 0.0
-    const val ARM_SHOOT = 0.0
-
 }
 
 /**
@@ -46,7 +39,6 @@ object ElecIDs {
     const val BEAMBREAK_ID = -1
     const val ARM_LEFT_ID = -1
     const val ARM_RIGHT_ID = -1
-    const val ARM_ENCODER_ID = -1
 }
 
 /**
@@ -59,14 +51,11 @@ object ConfigConsts {
     val INTAKE_IDLE_MODE = CANSparkBase.IdleMode.kBrake
     const val INTAKE_INVERTED = false
 
-    const val ARM_CURRENT_LIMIT = 50 //not combined
+    const val ARM_CURRENT_LIMIT = 50
     val ARM_IDLE_MODE = CANSparkBase.IdleMode.kBrake
-
     //One of these should be true and the other should be false, though I don't know which.
     const val ARM_LEFT_INVERTED = false
     const val ARM_RIGHT_INVERTED = false
-
-    const val ARM_ANGLE_TOLERANCE_RAD = 0.1 //Tolerance for arm's PID/FeedForward to stop (in radians)
 }
 
 /**
@@ -79,6 +68,7 @@ object MotorSpeeds {
     const val INTAKE_PULLER_SPEED = 0.0
     const val INTAKE_ANIGN_SPEED = 0.0
 }
+
 
 /**
  * PIDFFConsts is used for any PID/Feedforward constants that are used in subsystems and commands.
@@ -93,15 +83,7 @@ object MotorSpeeds {
  * A: Acceleration gain (only used sometimes), add voltage based on target acceleration.
  */
 object PIDFFConsts{
-    //PID and FeedForward Constants for the Arm
-    const val ARM_P = 0.0
-    const val ARM_I = 0.0
-    const val ARM_D = 0.0
-    const val ARM_S = 0.0
-    const val ARM_G = 0.0
-    const val ARM_V = 0.0
-    const val ARM_A = 0.0
-    val trapConstraints = TrapezoidProfile.Constraints(5.0, 15.0)
+
 }
 
 
