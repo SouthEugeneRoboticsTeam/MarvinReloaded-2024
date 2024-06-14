@@ -29,6 +29,12 @@ import com.revrobotics.CANSparkBase
 object PhysicalConsts {
     const val INTAKE_GEAR_REDUCTION = 1.0
     const val ARM_GEAR_REDUCTION = 1.0
+
+    //Arm setpoints
+    const val ARM_STOW = 0.0
+    const val ARM_AMP = 0.0
+    const val ARM_SHOOT = 0.0
+
 }
 
 /**
@@ -84,7 +90,14 @@ object MotorSpeeds {
  * A: Acceleration gain (only used sometimes), add voltage based on target acceleration.
  */
 object PIDFFConsts{
-
+    //PID and FeedForward Constants for the Arm
+    const val ARM_P = 0.0
+    const val ARM_I = 0.0
+    const val ARM_D = 0.0
+    const val ARM_S = 0.0
+    const val ARM_G = 0.0
+    const val ARM_V = 0.0
+    const val ARM_A = 0.0
 }
 
 
