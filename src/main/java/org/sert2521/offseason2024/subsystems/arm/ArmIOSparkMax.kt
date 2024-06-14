@@ -13,6 +13,8 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
     private val rightMotor = CANSparkMax(id, CANSparkLowLevel.MotorType.kBrushless)
     private val rightEncoder = rightMotor.encoder
 
+    private var armAngle:Double = 2.0 //TODO: CHANGE THIS!!!
+
     init {
         leftMotor.setSmartCurrentLimit(currentLimit)
         leftMotor.idleMode = brakingMode
@@ -42,6 +44,11 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
         inputs.tempCelsiusR = rightMotor.motorTemperature
     }
 
+    override fun getRadians() {
+    //TODO: Do this part (I don't know how to do it)
+    //This is temporary
+    return armAngle
+    }
     override fun setVoltage(volts:Double) {
         leftMotor.setVoltage(volts)
         rightMotor.setVoltage(volts)
