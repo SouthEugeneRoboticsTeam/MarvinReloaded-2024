@@ -1,26 +1,22 @@
-package org.sert2521.offseason2024.subsystems.intake
+package org.sert2521.offseason2024.subsystems.arm
 
 import org.littletonrobotics.junction.LogTable
 import org.littletonrobotics.junction.inputs.LoggableInputs
 
-
-interface IntakeIO {
-
-
-    class IntakeIOInputs:LoggableInputs{
+interface ArmIO {
+    class ArmIOInputs:LoggableInputs{
         var positionRadians = 0.0
         var velocityRadPerSec = 0.0
         var appliedVoltage = 0.0
         var supplyCurrentAmps = 0.0
         var tempCelsius = 0.0
-        var beambreakValue = false
 
-        override fun toLog(table: LogTable) {
+        override fun toLog(table: LogTable){
             table.put("positionRadians", positionRadians)
             table.put("velocityRadPerSec", velocityRadPerSec)
             table.put("appliedVoltage", appliedVoltage)
             table.put("supplyCurrentAmps", supplyCurrentAmps)
-            table.put("tempCelsius", tempCelsius)
+            table.put("tempCelcius", tempCelsius)
         }
 
         override fun fromLog(table: LogTable) {
@@ -32,12 +28,8 @@ interface IntakeIO {
         }
     }
 
-    fun updateInputs(inputs:IntakeIOInputs) {}
+    fun updateInputs(inputs: ArmIOInputs) {}
 
-    fun setPullerVoltage(volts:Double) {}
-    fun setPullerSpeed(speed:Double) {}
-    fun setAlignVoltage(volts:Double) {}
-    fun setAlignSpeed(speed:Double) {}
+    fun setVoltage(volts:Double) {}
     fun stop() {}
-    //fun getBeambreak():Boolean {}
 }

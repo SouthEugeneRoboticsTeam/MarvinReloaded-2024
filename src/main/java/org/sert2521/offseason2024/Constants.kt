@@ -28,6 +28,7 @@ import com.revrobotics.CANSparkBase
  */
 object PhysicalConsts {
     const val INTAKE_GEAR_REDUCTION = 1.0
+    const val ARM_GEAR_REDUCTION = 1.0
 }
 
 /**
@@ -36,6 +37,8 @@ object PhysicalConsts {
 object ElecIDs {
     const val INTAKE_ID = 1
     const val BEAMBREAK_ID = -1
+    const val ARM_LEFT_ID = -1
+    const val ARM_RIGHT_ID = -1
 }
 
 /**
@@ -47,6 +50,12 @@ object ConfigConsts {
     const val INTAKE_CURRENT_LIMIT = 30
     val INTAKE_IDLE_MODE = CANSparkBase.IdleMode.kBrake
     const val INTAKE_INVERTED = false
+
+    const val ARM_CURRENT_LIMIT = 50
+    val ARM_IDLE_MODE = CANSparkBase.IdleMode.kBrake
+    //One of these should be true and the other should be false, though I don't know which.
+    const val ARM_LEFT_INVERTED = false
+    const val ARM_RIGHT_INVERTED = false
 }
 
 /**
