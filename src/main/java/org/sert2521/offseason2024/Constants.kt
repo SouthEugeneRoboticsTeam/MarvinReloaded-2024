@@ -29,12 +29,6 @@ import com.revrobotics.CANSparkBase
 object PhysicalConsts {
     const val INTAKE_GEAR_REDUCTION = 1.0
     const val ARM_GEAR_REDUCTION = 1.0
-
-    //Arm setpoints
-    const val ARM_STOW = 0.0
-    const val ARM_AMP = 0.0
-    const val ARM_SHOOT = 0.0
-
 }
 
 /**
@@ -57,9 +51,8 @@ object ConfigConsts {
     val INTAKE_IDLE_MODE = CANSparkBase.IdleMode.kBrake
     const val INTAKE_INVERTED = false
 
-    const val ARM_CURRENT_LIMIT = 50 //not combined
+    const val ARM_CURRENT_LIMIT = 50
     val ARM_IDLE_MODE = CANSparkBase.IdleMode.kBrake
-
     //One of these should be true and the other should be false, though I don't know which.
     const val ARM_LEFT_INVERTED = false
     const val ARM_RIGHT_INVERTED = false
@@ -90,14 +83,7 @@ object MotorSpeeds {
  * A: Acceleration gain (only used sometimes), add voltage based on target acceleration.
  */
 object PIDFFConsts{
-    //PID and FeedForward Constants for the Arm
-    const val ARM_P = 0.0
-    const val ARM_I = 0.0
-    const val ARM_D = 0.0
-    const val ARM_S = 0.0
-    const val ARM_G = 0.0
-    const val ARM_V = 0.0
-    const val ARM_A = 0.0
+
 }
 
 
