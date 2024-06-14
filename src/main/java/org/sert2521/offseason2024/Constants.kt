@@ -51,8 +51,9 @@ object ConfigConsts {
     val INTAKE_IDLE_MODE = CANSparkBase.IdleMode.kBrake
     const val INTAKE_INVERTED = false
 
-    const val ARM_CURRENT_LIMIT = 50
+    const val ARM_CURRENT_LIMIT = 50 //not combined
     val ARM_IDLE_MODE = CANSparkBase.IdleMode.kBrake
+
     //One of these should be true and the other should be false, though I don't know which.
     const val ARM_LEFT_INVERTED = false
     const val ARM_RIGHT_INVERTED = false
