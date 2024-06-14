@@ -49,8 +49,6 @@ interface IntakeIO {
         }
     }
 
-
-
     fun updateInputs(inputs:IntakeIOInputs) {}
 
     fun setPullerVoltage(volts:Double) {}
