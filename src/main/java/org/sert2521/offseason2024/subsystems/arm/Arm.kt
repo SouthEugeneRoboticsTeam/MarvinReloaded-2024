@@ -9,7 +9,7 @@ import org.sert2521.offseason2024.PhysicalConsts
 object Arm: SubsystemBase() {
     private val name = "Arm"
 
-    val io = ArmIOSparkMax(ElecIDs.LEFT_ARM_ID, ConfigConsts.ARM_CURRENT_LIMIT, ConfigConsts.LEFT_ARM_INVERTED, ConfigConsts.ARM_IDLE_MODE, PhysicalConsts.ARM_GEAR_REDUCTION)
+    val io = ArmIOSparkMax(ElecIDs.ARM_LEFT_ID, ConfigConsts.ARM_CURRENT_LIMIT, ConfigConsts.ARM_LEFT_INVERTED, ConfigConsts.ARM_IDLE_MODE, PhysicalConsts.ARM_GEAR_REDUCTION)
     private val inputs = ArmIO.ArmIOInputs()
 
     override fun periodic(){
