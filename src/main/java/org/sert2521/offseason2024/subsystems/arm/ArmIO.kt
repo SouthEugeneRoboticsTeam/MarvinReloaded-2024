@@ -54,6 +54,7 @@ interface ArmIO {
 
     fun updateInputs(inputs: ArmIOInputs) {}
 
+    fun getRadians() {}
     fun setVoltage(volts:Double) {}
     fun stop() {}
 }
