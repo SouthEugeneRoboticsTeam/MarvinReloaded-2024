@@ -44,7 +44,7 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
         inputs.tempCelsiusR = rightMotor.motorTemperature
     }
 
-    override fun getRadians() {
+    fun getRadians(armAngle:Double): Double {
     //TODO: Do this part (I don't know how to do it)
     //This is temporary
     return armAngle
