@@ -47,7 +47,7 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
     fun getRadians(armAngle:Double): Double {
     //TODO: Do this part (I don't know how to do it)
     //This is temporary
-    return armAngle
+    return 2.0
     }
     override fun setVoltage(volts:Double) {
         leftMotor.setVoltage(volts)
