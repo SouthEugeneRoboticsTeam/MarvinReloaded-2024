@@ -23,19 +23,19 @@ class IntakeIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean,
 
     /** This sets the logged variables to the correct values */
     override fun updateInputs(inputs: IntakeIO.IntakeIOInputs) {
-        inputs.appliedVoltage = pullerMotor.appliedOutput * pullerMotor.busVoltage
-        inputs.positionRadians = Units.rotationsToRadians(pullerEncoder.position) / gearReduction
-        inputs.velocityRadPerSec =
+        inputs.pullerAppliedVoltage = pullerMotor.appliedOutput * pullerMotor.busVoltage
+        inputs.pullerPositionRadians = Units.rotationsToRadians(pullerEncoder.position) / gearReduction
+        inputs.pullerVelocityRadPerSec =
             Units.rotationsPerMinuteToRadiansPerSecond(pullerEncoder.velocity) / gearReduction
-        inputs.supplyCurrentAmps = pullerMotor.outputCurrent
-        inputs.tempCelsius = pullerMotor.motorTemperature
+        inputs.pullerSupplyCurrentAmps = pullerMotor.outputCurrent
+        inputs.pullerTempCelsius = pullerMotor.motorTemperature
 
-        inputs.appliedVoltage = alignMotor.appliedOutput * alignMotor.busVoltage
-        inputs.positionRadians = Units.rotationsToRadians(alignEncoder.position) / gearReduction
-        inputs.velocityRadPerSec =
+        inputs.alignAppliedVoltage = alignMotor.appliedOutput * alignMotor.busVoltage
+        inputs.alignPositionRadians = Units.rotationsToRadians(alignEncoder.position) / gearReduction
+        inputs.alignVelocityRadPerSec =
             Units.rotationsPerMinuteToRadiansPerSecond(alignEncoder.velocity) / gearReduction
-        inputs.supplyCurrentAmps = alignMotor.outputCurrent
-        inputs.tempCelsius = alignMotor.motorTemperature
+        inputs.alignSupplyCurrentAmps = alignMotor.outputCurrent
+        inputs.alignTempCelsius = alignMotor.motorTemperature
     }
 
     override fun setPullerVoltage(volts: Double) {

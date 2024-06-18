@@ -8,27 +8,44 @@ interface IntakeIO {
 
 
     class IntakeIOInputs:LoggableInputs{
-        var positionRadians = 0.0
-        var velocityRadPerSec = 0.0
-        var appliedVoltage = 0.0
-        var supplyCurrentAmps = 0.0
-        var tempCelsius = 0.0
-        var beambreakValue = false
+        var pullerPositionRadians = 0.0
+        var pullerVelocityRadPerSec = 0.0
+        var pullerAppliedVoltage = 0.0
+        var pullerSupplyCurrentAmps = 0.0
+        var pullerTempCelsius = 0.0
+
+        var alignPositionRadians = 0.0
+        var alignVelocityRadPerSec = 0.0
+        var alignAppliedVoltage = 0.0
+        var alignSupplyCurrentAmps = 0.0
+        var alignTempCelsius = 0.0
 
         override fun toLog(table: LogTable) {
-            table.put("positionRadians", positionRadians)
-            table.put("velocityRadPerSec", velocityRadPerSec)
-            table.put("appliedVoltage", appliedVoltage)
-            table.put("supplyCurrentAmps", supplyCurrentAmps)
-            table.put("tempCelsius", tempCelsius)
+            table.put("pullerPositionRadians", pullerPositionRadians)
+            table.put("pullerVelocityRadPerSec", pullerVelocityRadPerSec)
+            table.put("pullerAppliedVoltage", pullerAppliedVoltage)
+            table.put("pullerSupplyCurrentAmps", pullerSupplyCurrentAmps)
+            table.put("pullerTempCelsius", pullerTempCelsius)
+
+            table.put("alignPositionRadians", alignPositionRadians)
+            table.put("alignVelocityRadPerSec", alignVelocityRadPerSec)
+            table.put("alignAppliedVoltage", alignAppliedVoltage)
+            table.put("alignSupplyCurrentAmps", alignSupplyCurrentAmps)
+            table.put("alignTempCelsius", alignTempCelsius)
         }
 
         override fun fromLog(table: LogTable) {
-            positionRadians = table.get("positionRadians", positionRadians)
-            velocityRadPerSec = table.get("velocityRadPerSec", velocityRadPerSec)
-            appliedVoltage = table.get("appliedVoltage", appliedVoltage)
-            supplyCurrentAmps = table.get("supplyCurrentAmps", supplyCurrentAmps)
-            tempCelsius = table.get("tempCelsius", tempCelsius)
+            pullerPositionRadians = table.get("pullerPositionRadians", pullerPositionRadians)
+            pullerVelocityRadPerSec = table.get("pullerVelocityRadPerSec", pullerVelocityRadPerSec)
+            pullerAppliedVoltage = table.get("pullerAppliedVoltage", pullerAppliedVoltage)
+            pullerSupplyCurrentAmps = table.get("supplyCurrentAmps", pullerSupplyCurrentAmps)
+            pullerTempCelsius = table.get("tempCelsius", pullerTempCelsius)
+
+            alignPositionRadians = table.get("alignPositionRadians", alignPositionRadians)
+            alignVelocityRadPerSec = table.get("alignVelocityRadPerSec", alignVelocityRadPerSec)
+            alignAppliedVoltage = table.get("alignAppliedVoltage", alignAppliedVoltage)
+            alignSupplyCurrentAmps = table.get("alignAupplyCurrentAmps", alignSupplyCurrentAmps)
+            alignTempCelsius = table.get("alignTempCelsius", alignTempCelsius)
         }
     }
 
@@ -41,5 +58,4 @@ interface IntakeIO {
     fun setAlignVoltage(volts:Double) {}
     fun setAlignSpeed(speed:Double) {}
     fun stop() {}
-    fun getBeambreak():Boolean {}
 }

@@ -19,6 +19,6 @@ class IntakeCommand: Command() {
     }
 
     override fun isFinished():Boolean {
-        return Intake.io.getBeambreak()
+        return false
     }
 }
