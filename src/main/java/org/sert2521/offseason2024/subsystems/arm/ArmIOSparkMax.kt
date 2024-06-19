@@ -6,6 +6,8 @@ import com.revrobotics.CANSparkMax
 import edu.wpi.first.math.util.Units
 import edu.wpi.first.wpilibj.DutyCycleEncoder
 import org.sert2521.offseason2024.ElecIDs
+import org.sert2521.offseason2024.PhysicalConsts
+import kotlin.math.PI
 
 class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CANSparkBase.IdleMode, private val gearReduction:Double):ArmIO {
 
@@ -16,6 +18,7 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
     private val rightEncoder = rightMotor.encoder
 
     private val encoder = DutyCycleEncoder(ElecIDs.ARM_ENCODER_ID)
+    private var encoderRadians = 0.0
 
     init {
         leftMotor.setSmartCurrentLimit(currentLimit)
@@ -47,7 +50,8 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
     }
 
     override fun getRadians():Double {
-        return encoder.absolutePosition
+        encoderRadians = (encoder.absolutePosition + PhysicalConsts.ARM_ENCODER_OFFSET) * 2 * PI
+        return encoderRadians
     }
     override fun setVoltage(volts:Double) {
         leftMotor.setVoltage(volts)

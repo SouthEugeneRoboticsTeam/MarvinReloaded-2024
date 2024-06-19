@@ -36,6 +36,8 @@ object PhysicalConsts {
     const val ARM_AMP = 0.0
     const val ARM_SHOOT = 0.0
 
+    const val ARM_ENCODER_OFFSET = 0.0
+
 }
 
 /**
