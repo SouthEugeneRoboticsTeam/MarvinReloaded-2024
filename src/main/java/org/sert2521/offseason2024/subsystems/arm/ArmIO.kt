@@ -19,6 +19,8 @@ interface ArmIO {
         var supplyCurrentAmpsR = 0.0
         var tempCelsiusR = 0.0
 
+        var absoluteEncoder = 0.0
+
         override fun toLog(table: LogTable){
             //Left motor
             table.put("positionRadiansL", positionRadiansL)
@@ -33,6 +35,8 @@ interface ArmIO {
             table.put("appliedVoltageR", appliedVoltageR)
             table.put("supplyCurrentAmpsR", supplyCurrentAmpsR)
             table.put("tempCelSiusR", tempCelsiusR)
+
+            table.put("absoluteEncoder", absoluteEncoder)
         }
 
         override fun fromLog(table: LogTable) {
@@ -49,12 +53,14 @@ interface ArmIO {
             appliedVoltageR = table.get("appliedVoltageR", appliedVoltageR)
             supplyCurrentAmpsR = table.get("supplyCurrentAmpsR", supplyCurrentAmpsR)
             tempCelsiusR = table.get("tempCelsiusR", tempCelsiusR)
+
+            absoluteEncoder = table.get("absoluteEncoder", absoluteEncoder)
         }
     }
 
-    fun updateInputs(inputs: ArmIOInputs) {}
+    fun updateInputs(inputs: ArmIOInputs)
 
-    fun getRadians() {}
-    fun setVoltage(volts:Double) {}
-    fun stop() {}
+    fun getRadians() :Double
+    fun setVoltage(volts:Double)
+    fun stop()
 }

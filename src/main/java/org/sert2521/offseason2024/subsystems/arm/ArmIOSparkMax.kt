@@ -4,6 +4,8 @@ import com.revrobotics.CANSparkBase
 import com.revrobotics.CANSparkLowLevel
 import com.revrobotics.CANSparkMax
 import edu.wpi.first.math.util.Units
+import edu.wpi.first.wpilibj.DutyCycleEncoder
+import org.sert2521.offseason2024.ElecIDs
 
 class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CANSparkBase.IdleMode, private val gearReduction:Double):ArmIO {
 
@@ -13,7 +15,7 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
     private val rightMotor = CANSparkMax(id, CANSparkLowLevel.MotorType.kBrushless)
     private val rightEncoder = rightMotor.encoder
 
-    private var armAngle:Double = 2.0 //TODO: CHANGE THIS!!!
+    private val encoder = DutyCycleEncoder(ElecIDs.ARM_ENCODER_ID)
 
     init {
         leftMotor.setSmartCurrentLimit(currentLimit)
@@ -44,10 +46,8 @@ class ArmIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean, brakingMode: CAN
         inputs.tempCelsiusR = rightMotor.motorTemperature
     }
 
-    fun getRadians(armAngle:Double): Double {
-    //TODO: Do this part (I don't know how to do it)
-    //This is temporary
-    return 2.0
+    override fun getRadians():Double {
+        return encoder.absolutePosition
     }
     override fun setVoltage(volts:Double) {
         leftMotor.setVoltage(volts)
