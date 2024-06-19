@@ -18,7 +18,5 @@ object Arm: SubsystemBase() {
         Logger.processInputs(name, inputs)
     }
 
-    init{
-
-    }
+    init{} //Does this need to be here?
 }
