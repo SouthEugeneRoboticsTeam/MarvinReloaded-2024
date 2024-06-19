@@ -1,6 +1,7 @@
 package org.sert2521.offseason2024
 
 import com.revrobotics.CANSparkBase
+import edu.wpi.first.math.trajectory.TrapezoidProfile
 
 /*
  * The Constants file provides a convenient place for teams to hold robot-wide
@@ -30,7 +31,7 @@ object PhysicalConsts {
     const val INTAKE_GEAR_REDUCTION = 1.0
     const val ARM_GEAR_REDUCTION = 1.0
 
-    //Arm setpoints
+    //Arm setpoints (Change them)
     const val ARM_STOW = 0.0
     const val ARM_AMP = 0.0
     const val ARM_SHOOT = 0.0
@@ -64,6 +65,8 @@ object ConfigConsts {
     //One of these should be true and the other should be false, though I don't know which.
     const val ARM_LEFT_INVERTED = false
     const val ARM_RIGHT_INVERTED = false
+
+    const val ARM_ANGLE_TOLERANCE_RAD = 0.1 //Tolerance for arm's PID/FeedForward to stop (in radians)
 }
 
 /**
@@ -76,7 +79,6 @@ object MotorSpeeds {
     const val INTAKE_PULLER_SPEED = 0.0
     const val INTAKE_ANIGN_SPEED = 0.0
 }
-
 
 /**
  * PIDFFConsts is used for any PID/Feedforward constants that are used in subsystems and commands.
@@ -99,6 +101,7 @@ object PIDFFConsts{
     const val ARM_G = 0.0
     const val ARM_V = 0.0
     const val ARM_A = 0.0
+    val trapConstraints = TrapezoidProfile.Constraints(5.0, 15.0)
 }
 
 
