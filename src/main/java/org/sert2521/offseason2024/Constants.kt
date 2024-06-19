@@ -45,6 +45,7 @@ object ElecIDs {
     const val BEAMBREAK_ID = -1
     const val ARM_LEFT_ID = -1
     const val ARM_RIGHT_ID = -1
+    const val ARM_ENCODER_ID = -1
 }
 
 /**
