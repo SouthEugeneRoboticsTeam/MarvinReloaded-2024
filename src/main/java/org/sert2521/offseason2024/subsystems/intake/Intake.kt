@@ -10,7 +10,6 @@ import org.sert2521.offseason2024.PhysicalConsts
 object Intake:SubsystemBase(){
     private val name = "Intake"
 
-
     /** The object that interacts with motors */
     val io = IntakeIOSparkMax(ElecIDs.INTAKE_ID, ConfigConsts.INTAKE_CURRENT_LIMIT,
         ConfigConsts.INTAKE_INVERTED, ConfigConsts.INTAKE_IDLE_MODE, PhysicalConsts.INTAKE_GEAR_REDUCTION)

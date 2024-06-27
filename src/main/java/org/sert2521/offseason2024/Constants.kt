@@ -36,6 +36,8 @@ object PhysicalConsts {
 object ElecIDs {
     const val INTAKE_ID = 1
     const val BEAMBREAK_ID = -1
+    const val CLIMBER_ID_L = -1
+    const val CLIMBER_ID_R = -1
 }
 
 /**
