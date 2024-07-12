@@ -10,9 +10,8 @@ import org.sert2521.offseason2024.PhysicalConsts
 object Intake:SubsystemBase(){
     private val name = "Intake"
 
-
     /** The object that interacts with motors */
-    val io = IntakeIOSparkMax(ElecIDs.INTAKE_ID, ConfigConsts.INTAKE_CURRENT_LIMIT,
+    private val io = IntakeIOSparkMax(ElecIDs.PULLER_ID, ElecIDs.ALIGN_ID, ConfigConsts.INTAKE_CURRENT_LIMIT,
         ConfigConsts.INTAKE_INVERTED, ConfigConsts.INTAKE_IDLE_MODE, PhysicalConsts.INTAKE_GEAR_REDUCTION)
     private val inputs = IntakeIO.IntakeIOInputs()
 
@@ -21,10 +20,18 @@ object Intake:SubsystemBase(){
         Logger.processInputs(name, inputs)
     }
 
+    fun setSpeed(speed:Double){
+        io.setAlignSpeed(speed)
+        io.setPullerSpeed(speed)
+    }
 
+    fun setVoltage(volts:Double){
+        io.setPullerVoltage(volts)
+        io.setAlignVoltage(volts)
+    }
 
-    init {
-
+    fun stop(){
+        io.stop()
     }
 
 }

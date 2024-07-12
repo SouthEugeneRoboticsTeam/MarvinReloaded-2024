@@ -5,11 +5,11 @@ import com.revrobotics.CANSparkLowLevel
 import com.revrobotics.CANSparkMax
 import edu.wpi.first.math.util.Units
 
-class IntakeIOSparkMax(id:Int, currentLimit:Int, inverted:Boolean,
+class IntakeIOSparkMax(pullID:Int, alignID:Int, currentLimit:Int, inverted:Boolean,
                        brakingMode:IdleMode, private val gearReduction: Double):IntakeIO{
 
-    private val pullerMotor = CANSparkMax(id, CANSparkLowLevel.MotorType.kBrushless)
-    private val alignMotor = CANSparkMax(id, CANSparkLowLevel.MotorType.kBrushless)
+    private val pullerMotor = CANSparkMax(pullID, CANSparkLowLevel.MotorType.kBrushless)
+    private val alignMotor = CANSparkMax(alignID, CANSparkLowLevel.MotorType.kBrushless)
 
     private val pullerEncoder = pullerMotor.encoder
     private val alignEncoder = pullerMotor.encoder
