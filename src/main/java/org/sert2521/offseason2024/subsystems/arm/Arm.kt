@@ -10,13 +10,13 @@ object Arm: SubsystemBase() {
     private val name = "Arm"
 
     /** The object that interacts with motors */
-    val io = ArmIOSparkMax(ElecIDs.ARM_LEFT_ID, ConfigConsts.ARM_CURRENT_LIMIT, ConfigConsts.ARM_LEFT_INVERTED, ConfigConsts.ARM_IDLE_MODE, PhysicalConsts.ARM_GEAR_REDUCTION)
+    val leftMotor = ArmIOSparkMax(ElecIDs.ARM_LEFT_ID, ConfigConsts.ARM_CURRENT_LIMIT, ConfigConsts.ARM_LEFT_INVERTED, ConfigConsts.ARM_IDLE_MODE, PhysicalConsts.ARM_GEAR_REDUCTION)
+    val rightMotor = ArmIOSparkMax(ElecIDs.ARM_RIGHT_ID, ConfigConsts.ARM_CURRENT_LIMIT, ConfigConsts.ARM_RIGHT_INVERTED, ConfigConsts.ARM_IDLE_MODE, PhysicalConsts.ARM_GEAR_REDUCTION)
     private val inputs = ArmIO.ArmIOInputs()
 
     override fun periodic(){
-        io.updateInputs(inputs)
+        leftMotor.updateInputs(inputs)
+        rightMotor.updateInputs(inputs)
         Logger.processInputs(name, inputs)
     }
-
-    init{} //Does this need to be here?
 }

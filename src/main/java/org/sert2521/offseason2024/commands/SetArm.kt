@@ -28,11 +28,11 @@ class SetArm (private val goal:Double, private val ends:Boolean = true) : Comman
     override fun execute() {
         done = false
 
-        armAngle = Arm.io.getRadians()
+        armAngle = ArmIOSparkMax.getRadians()
         pidOutput = pid.calculate(armAngle, goal)
         feedForwardOutput = feedForward.calculate(armAngle, pid.setpoint.velocity)
 
-        Arm.io.setVoltage(pidOutput + feedForwardOutput)
+        Arm.leftMotor.setVoltage(pidOutput + feedForwardOutput)
 
         if((abs(goal - armAngle)) <= ConfigConsts.ARM_ANGLE_TOLERANCE_RAD){
             done = true
