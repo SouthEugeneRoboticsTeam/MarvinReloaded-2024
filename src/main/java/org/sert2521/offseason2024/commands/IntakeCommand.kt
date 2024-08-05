@@ -15,7 +15,7 @@ class IntakeCommand: Command() {
 
     override fun execute() {
         Intake.io.setPullerSpeed(MotorSpeeds.INTAKE_PULLER_SPEED)
-        Intake.io.setAlignSpeed(MotorSpeeds.INTAKE_ANIGN_SPEED)
+        Intake.io.setAlignSpeed(MotorSpeeds.INTAKE_ALIGN_SPEED)
     }
 
     override fun isFinished():Boolean {

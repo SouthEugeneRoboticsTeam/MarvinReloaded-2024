@@ -34,7 +34,7 @@ interface ArmIO {
             table.put("velocityRadPerSecR", velocityRadPerSecR)
             table.put("appliedVoltageR", appliedVoltageR)
             table.put("supplyCurrentAmpsR", supplyCurrentAmpsR)
-            table.put("tempCelSiusR", tempCelsiusR)
+            table.put("tempCelsiusR", tempCelsiusR)
 
             table.put("absoluteEncoder", absoluteEncoder)
         }

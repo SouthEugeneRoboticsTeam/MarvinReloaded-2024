@@ -66,7 +66,7 @@ object ConfigConsts {
 
     //One of these should be true and the other should be false, though I don't know which.
     const val ARM_LEFT_INVERTED = false
-    const val ARM_RIGHT_INVERTED = false
+    const val ARM_RIGHT_INVERTED = true
 
     const val ARM_ANGLE_TOLERANCE_RAD = 0.1 //Tolerance for arm's PID/FeedForward to stop (in radians)
 }
@@ -79,7 +79,7 @@ object ConfigConsts {
  */
 object MotorSpeeds {
     const val INTAKE_PULLER_SPEED = 0.0
-    const val INTAKE_ANIGN_SPEED = 0.0
+    const val INTAKE_ALIGN_SPEED = 0.0
 }
 
 /**
