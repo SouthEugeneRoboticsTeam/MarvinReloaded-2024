@@ -37,6 +37,7 @@ object ElecIDs {
     const val PULLER_ID = -1
     const val ALIGN_ID = -1
     const val BEAMBREAK_ID = -1
+    const val FLYWHEEL_ID = -1
 }
 
 /**
