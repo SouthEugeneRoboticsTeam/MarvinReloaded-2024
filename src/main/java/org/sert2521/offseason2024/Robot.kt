@@ -3,9 +3,10 @@ package org.sert2521.offseason2024
 import edu.wpi.first.hal.FRCNetComm.tInstances
 import edu.wpi.first.hal.FRCNetComm.tResourceType
 import edu.wpi.first.hal.HAL
+import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.CommandScheduler
-import org.littletonrobotics.junction.LoggedRobot
+
 
 /**
  * The VM is configured to automatically run this object (which basically functions as a singleton class),
@@ -17,7 +18,7 @@ import org.littletonrobotics.junction.LoggedRobot
  * the `Main.kt` file in the project. (If you use the IDE's Rename or Move refactorings when renaming the
  * object or package, it will get changed everywhere.)
  */
-object Robot : LoggedRobot()
+object Robot : TimedRobot()
 {
     /**
      * The autonomous command to run. While a default value is set here,

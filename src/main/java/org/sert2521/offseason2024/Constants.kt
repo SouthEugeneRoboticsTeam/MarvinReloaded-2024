@@ -27,16 +27,13 @@ import com.revrobotics.CANSparkBase
  * as that is covered by another constants class/json file (haven't decided yet)
  */
 object PhysicalConsts {
-    const val INTAKE_GEAR_REDUCTION = 1.0
 }
 
 /**
  * These are the electronic ids of the motor controllers.
  */
-object ElecIDs {
-    const val PULLER_ID = -1
-    const val ALIGN_ID = -1
-    const val BEAMBREAK_ID = -1
+object ElectronicIDs {
+
 }
 
 /**
@@ -45,22 +42,6 @@ object ElecIDs {
  * All motor names should be agreed upon and understood by electrical members in regular comp.
  */
 object ConfigConsts {
-    const val INTAKE_CURRENT_LIMIT = 30
-    val INTAKE_IDLE_MODE = CANSparkBase.IdleMode.kBrake
-    const val INTAKE_INVERTED = false
-}
-
-/**
- * Motor speeds are either set on a scale of -1.0 (max reverse) to 1.0 (max forward),
- * or on a scale of voltage (negative goes backwards).
- * A motor speed variable should be named (motor)_SPEED and be from -1.0 to 1.0 when using motor.set()
- * and use (motor)_VOLTAGE and use a scale of voltage when using motor.setVoltage().
- */
-object MotorSpeeds {
-    const val INTAKE_PULLER_SPEED = 0.0
-    const val INTAKE_ANIGN_SPEED = 0.0
-
-    const val INTAKE_SPEED = 0.0
 }
 
 
