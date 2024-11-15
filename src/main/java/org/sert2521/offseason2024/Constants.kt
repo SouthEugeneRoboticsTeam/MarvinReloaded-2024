@@ -33,8 +33,9 @@ object PhysicalConsts {
  * These are the electronic ids of the motor controllers.
  */
 object ElectronicIDs {
-
+    const val INTAKE_MOTOR_ID = -1
 }
+
 
 /**
  * All current limits are in amps. Idle mode can be kCoast (Coasting) or kBrake (Braking mode).
