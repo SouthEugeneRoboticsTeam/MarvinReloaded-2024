@@ -33,7 +33,8 @@ object PhysicalConsts {
  * These are the electronic ids of the motor controllers.
  */
 object ElectronicIDs {
-
+    const val INDEXER_MOTOR = -1
+    const val BEAMBRAKE_ID = -1
 }
 
 /**
