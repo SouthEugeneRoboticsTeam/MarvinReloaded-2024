@@ -27,13 +27,15 @@ import com.revrobotics.CANSparkBase
  * as that is covered by another constants class/json file (haven't decided yet)
  */
 object PhysicalConsts {
+    const val FLYWHEEL_GEAR_RATIO = 1.0;
 }
 
 /**
  * These are the electronic ids of the motor controllers.
  */
 object ElectronicIDs {
-
+    const val FLYWHEEL_MOTOR_ONE_ID = -1
+    const val FLYWHEEL_MOTOR_TWO_ID = -1
 }
 
 /**
