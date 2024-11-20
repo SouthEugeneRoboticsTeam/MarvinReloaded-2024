@@ -4,9 +4,6 @@ import edu.wpi.first.wpilibj2.command.Command
 import org.sert2521.offseason2024.subsystems.Indexer
 
 class RunIndexer : Command() {
-
-
-
     init {
         // each subsystem used by the command must be passed into the addRequirements() method
         addRequirements(Indexer)
