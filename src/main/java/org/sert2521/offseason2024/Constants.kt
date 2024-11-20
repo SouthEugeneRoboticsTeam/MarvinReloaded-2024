@@ -33,7 +33,8 @@ object PhysicalConsts {
  * These are the electronic ids of the motor controllers.
  */
 object ElectronicIDs {
-
+    val intakeone=-1
+    val intaketwo=-2
 }
 
 /**
