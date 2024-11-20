@@ -1,6 +1,7 @@
 package org.sert2521.offseason2024
 
-import com.revrobotics.CANSparkBase
+import edu.wpi.first.math.trajectory.TrapezoidProfile
+import kotlin.math.PI
 
 /*
  * The Constants file provides a convenient place for teams to hold robot-wide
@@ -27,13 +28,21 @@ import com.revrobotics.CANSparkBase
  * as that is covered by another constants class/json file (haven't decided yet)
  */
 object PhysicalConsts {
+    const val ARM_ENCODER_MULTIPLY = -2* PI
+    var ARM_ENCODER_OFFSET = -0.197
+    val trapConstraints = TrapezoidProfile.Constraints(5.0, 15.0)
+    const val ARM_ANGLE_TOLERANCE = 0.0
+
+    const val ARM_SETPOINT_STOW = 0.0
+
 }
 
 /**
  * These are the electronic ids of the motor controllers.
  */
 object ElectronicIDs {
-
+    const val ARM_MOTOR_L = -1
+    const val ARM_MOTOR_R = -2
 }
 
 /**
@@ -42,6 +51,9 @@ object ElectronicIDs {
  * All motor names should be agreed upon and understood by electrical members in regular comp.
  */
 object ConfigConsts {
+    const val ARM_MOTOR_CURRENT_LIMIT = 30
+
+
 }
 
 
@@ -53,17 +65,22 @@ object ConfigConsts {
  * D: Slightly slower, more oscillation before setpoint
  *
  * S: Static gain, adds same voltage at all times
- * V: Velocity gain, add voltage multiplied by target ending velocity
  * G: Gravity gain (only in arms), add voltage based on target arm angle, accounts for gravity
+ * V: Velocity gain, add voltage multiplied by target ending velocity
  * A: Acceleration gain (only used sometimes), add voltage based on target acceleration.
  */
 object PIDFFConsts{
+    const val ARM_S = 0.0
+    const val ARM_G = 0.0
+    const val ARM_V = 0.0
+    const val ARM_A = 0.0
 
+    const val ARM_P = 0.0
+    const val ARM_I = 0.0
+    const val ARM_D = 0.0
 }
 
-
-
-
-
-
-
+object RuntimeConsts{
+    var armSetPoint = 0.0
+    var armSetPoint = 0.0
+}
