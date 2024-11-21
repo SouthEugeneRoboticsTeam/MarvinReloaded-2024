@@ -82,5 +82,4 @@ object PIDFFConsts{
 
 object RuntimeConsts{
     var armSetPoint = 0.0
-    var armSetPoint = 0.0
 }
