@@ -3,8 +3,6 @@ package org.sert2521.offseason2024.commands
 import edu.wpi.first.math.controller.ArmFeedforward
 import edu.wpi.first.wpilibj2.command.Command
 import org.sert2521.offseason2024.PIDFFConsts
-import org.sert2521.offseason2024.PhysicalConsts
-import org.sert2521.offseason2024.RuntimeConsts
 import org.sert2521.offseason2024.subsystems.Arm
 
 class ResetArm() : Command() {
@@ -22,6 +20,7 @@ class ResetArm() : Command() {
     }
 
     override fun execute() {
+        armAngle = Arm.getRadians()
         val feedforwardResult = feedForward.calculate(armAngle, 0.0)
         Arm.setVoltage(feedforwardResult-0.8)
     }
@@ -32,7 +31,5 @@ class ResetArm() : Command() {
 
     override fun end(interrupted: Boolean) {
         Arm.resetEncoder()
-        PhysicalConsts.ARM_ENCODER_OFFSET = -0.197
-        RuntimeConsts.armSetPoint = PhysicalConsts.ARM_SETPOINT_STOW
     }
 }

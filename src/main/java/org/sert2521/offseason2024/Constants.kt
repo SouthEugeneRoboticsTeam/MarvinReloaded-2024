@@ -52,7 +52,7 @@ object ElectronicIDs {
  */
 object ConfigConsts {
     const val ARM_MOTOR_CURRENT_LIMIT = 30
-
+    const val ARM_ANGLE_TOLERANCE = 0.0
 
 }
 
@@ -78,8 +78,4 @@ object PIDFFConsts{
     const val ARM_P = 0.0
     const val ARM_I = 0.0
     const val ARM_D = 0.0
-}
-
-object RuntimeConsts{
-    var armSetPoint = 0.0
 }
