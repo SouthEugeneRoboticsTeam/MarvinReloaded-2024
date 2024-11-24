@@ -40,7 +40,7 @@ class SetArm(var goal:Double) : Command() {
         }
     }
 
-    override fun isFinished(done:Boolean): Boolean {
+    fun isFinished(done:Boolean): Boolean {
         return done
     }
 }
