@@ -1,7 +1,5 @@
 package org.sert2521.offseason2024
 
-import com.revrobotics.CANSparkBase
-
 /*
  * The Constants file provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants. This file should not be used for any other purpose.
@@ -34,7 +32,7 @@ object PhysicalConsts {
  */
 object ElectronicIDs {
     const val INDEXER_MOTOR = -1
-    const val BEAMBRAKE_ID = -1
+    const val BEAMBREAK_ID = -1
 }
 
 /**

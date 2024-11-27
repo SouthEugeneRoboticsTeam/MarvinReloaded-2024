@@ -5,13 +5,13 @@ import com.revrobotics.CANSparkLowLevel
 import com.revrobotics.CANSparkMax
 import edu.wpi.first.wpilibj.DigitalInput
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import org.sert2521.offseason2024.ElectronicIDs.BEAMBRAKE_ID
+import org.sert2521.offseason2024.ElectronicIDs.BEAMBREAK_ID
 import org.sert2521.offseason2024.ElectronicIDs.INDEXER_MOTOR
 
 object Indexer : SubsystemBase() {
     private val indexerMotor = CANSparkMax(INDEXER_MOTOR, CANSparkLowLevel.MotorType.kBrushless)
     private val encoder = indexerMotor.encoder
-    private val beamBrake = DigitalInput(BEAMBRAKE_ID)
+    private val beamBreak = DigitalInput(BEAMBREAK_ID)
 
     init {
         indexerMotor.idleMode = CANSparkBase.IdleMode.kBrake
@@ -27,8 +27,8 @@ object Indexer : SubsystemBase() {
         indexerMotor.stopMotor()
     }
 
-    fun getBeamBrake():Boolean{
-        return !beamBrake.get()
+    fun getBeamBreak():Boolean{
+        return !beamBreak.get()
     }
 
 

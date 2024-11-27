@@ -18,7 +18,7 @@ class RunIndexer : Command() {
     }
 
     override fun isFinished(): Boolean {
-        return Indexer.getBeamBrake()
+        return Indexer.getBeamBreak()
     }
 
     override fun end(interrupted: Boolean) {
